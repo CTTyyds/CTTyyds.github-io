@@ -1,0 +1,305 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family:'Times New Roman', Times, serif;
+}
+
+html, body {
+	background: #f4f4f4;	
+	font-family: "Times New Roman", Times, serif;
+	font-size: 16px;/*Set the baseline font size for the whole website*/
+}
+
+footer {
+	height: 10vh;
+	background-color: #DAF7A6;
+	text-align: center;
+	
+	/*Centering both vertical and horizontal*/
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.responsive-nav-bar-area {
+	background-color: #DAF7A6;
+	min-height: 5vh;
+}
+
+main {
+	min-height: 85vh;
+	background-color: gray;
+	
+	/*Make this main area become a flexbox container*/
+	display: flex;
+	flex-direction: column;/*display on a column => vertically*/
+}
+
+.internal-menu-area {
+	min-height: 10vh;
+	background-color: pink;
+	
+	/*Make this area become a flexbox container*/
+	display: flex;
+	flex-direction: column;
+}
+
+.internal-menu-row {
+	min-height: 5vh;
+	background-color: #2ECC71;	
+	border: solid 1px black;
+	
+	/*Make this area become a flexbox container*/
+	display: flex;
+	flex-direction: row;	
+}
+
+.internal-menu-row-box {
+	flex: 1;
+	background-color: #28B463;	
+	border: solid 1px black;
+}
+
+/*Demo area*/
+.demo-area {
+	min-height: 50vh;
+	background-color: white;	
+}
+
+.demo-box {
+	min-height: 20vh;
+	background-color: white;	
+	border: solid 1px black;
+}
+
+.demo-button {
+	width: 100%;
+	height: 100%;	
+	background-color: #FF9633;
+	border: none;
+	color: blue;
+	
+	padding: 3px 3px;	
+	text-align: center;
+	text-decoration: none;	
+	font-size: 16px;
+	margin: 2px 2px;
+	cursor: pointer;	
+}
+
+nav {
+	padding: 10px 10px 10px 10px;/*10px 10px 10px 10px*/
+	overflow: visible;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: visible;
+}
+
+nav ul li {
+	display: block;
+	font-family: 'Oswald', sans-serif;
+	font-size: 1.2em;
+	text-transform: uppercase;
+}
+
+nav ul li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;	
+}
+
+.active {
+	background-color: #FF9633;
+}
+
+nav ul li:hover:not(.active) {
+	background-color: green;
+}
+
+
+nav ul li ul li {
+	background: #555; 
+	display: block; 
+	font-size: 1em;
+}
+
+nav ul li ul li a {
+	display: block; 
+	text-align: left;
+
+}
+
+nav ul li.dropdown:hover ul {
+	display: block;
+}
+
+/*Use Flexbox to create responsive layout*/
+.CurtainMenu {
+	background-color: #00cebf;
+	opacity:0.8;
+	min-height: 5vh;
+	
+	/*flexbox container*/
+	display: flex;
+	flex-direction: row;/*display on a row => horizontally*/
+}
+
+.logo-tagline {
+	/*Use Flexbox to create responsive layout*/
+	flex: 1;
+	
+	/*flexbox container*/
+	display: flex;
+	flex-direction: row;/*display on a row => horizontally*/
+}
+
+.logo, .tagline {
+	font-size: 1.5em;
+}
+
+.tagline{
+	/*Centering both vertical and horizontal*/
+	display: flex;
+	justify-content: left;
+	align-items: center;
+}
+
+.desktop-menu {
+	/*Use Flexbox to create responsive layout*/
+	flex: 3;
+	display: none;	
+}
+
+
+.menu-icon-style {
+	/*Use Flexbox to create responsive layout*/
+	flex: 1;
+		
+	font-size: 4.0em;
+	color: blue;
+	cursor: pointer;
+	text-align: right;
+	margin-right: 20px;
+}
+
+#curtain-nav {
+	height: 70%;/*100%*/
+	width: 0;/*Hide it as default when loading page*/
+	padding: 0;
+	position: fixed;
+	z-index: 3;
+	top: 0; 
+	right: 0;
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0, 0.9);
+	overflow-x: hidden;
+	transition: 0.5s;	
+}
+
+.curtain-nav-content {
+	/*For curtain menu*/
+	position: relative;
+	top: 15%;
+	width: 100%;
+	text-align: center;
+	margin-top: 30px;	
+	overflow: visible;
+}
+
+.nav-close-button {
+	position: absolute;
+	top: 20px;
+	right: 45px;
+	font-size: 2.0em;
+	color: white;
+	text-decoration: none;
+}
+.mt{
+    background-color: #FF9633;
+}
+.img{
+    border: 1px solid black;
+
+}
+@media screen and (min-width: 768px) {/*when the viewport is 768px or larger => Set those styles for Tablet or PC*/  
+	.desktop-menu {
+		display: block;
+	}
+	
+	/*Horizontal nav*/
+	.horizontal-nav {
+			background-color: #00cebf; 
+		 padding: 10px 10px 10px 10px;
+	}
+	
+	.horizontal-nav ul {
+		 list-style-type: none;
+		 margin: 0;
+		 padding: 0;
+		 overflow: hidden;
+	 }
+ 
+	 .horizontal-nav ul li {
+		 display: inline-block;
+		 font-family: 'Oswald', sans-serif;
+		 font-size: 1.2em;
+	 }
+ 
+	 .horizontal-nav ul li a {
+		 display: block;
+		 color: black;
+		 text-align: center;
+		 padding: 14px 16px;
+		 text-decoration: none;	
+	 }
+ 
+ 
+	 .horizontal-nav ul li:hover:not(.active) {
+		 background-color: green;
+	 }
+	 
+	 /*Make bio and webtechno sections horizontal*/
+	 .bio-webtechno {
+		 min-height: 25vh;
+		 background-color: #003366;
+		 
+		 /*flexbox container*/
+		 display: flex;
+		 flex-direction: row;/*display on a row => horizontal*/	
+	 }
+	 
+	 .portrai-paragraph {
+		 /*flexbox container*/
+		 display: flex;
+		 flex-direction: row;	
+	 }
+	 
+	 /*Makes the three columns horizontal*/
+	 .topics_container {
+		 display: flex;
+		 flex-direction: row;
+	 }
+     main {
+		display: flex;
+		flex-direction: row;
+	}	
+	.internal-menu-area {
+		flex: 1;
+	}	
+	.demo-area {
+		flex: 5;
+	}
+	
+	/*Make all boxes in intenal-menu vertical*/
+	.internal-menu-row {
+		display: flex;
+		flex-direction: column;	
+	}
+}

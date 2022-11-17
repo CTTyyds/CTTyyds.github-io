@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<!------------------------------HEAD------------------------------------------------>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extension </title>
+	<link rel="stylesheet" type="text/css" href="../style/ex.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head> 
+       
+<header>
+       <div class="CurtainMenu">
+
+            <!--Icon and Tagline-->
+            <div class="logo-tagline">
+            <div class="logo">
+                <img src="../images/OIP-C.jpg" class="img-fluid" style="width:75px;" />
+            </div>
+            <div class="tagline">Extension
+            </div>
+            </div>
+            
+            <!--Desktop horizontal-menu-->
+            <div class="desktop-menu">
+            <div class="horizontal-nav">
+                <ul>
+                <li ><a href="../index.html">HOME</a></li>
+                <li  ><a href="../html/booking.html">Booking</a></li>
+                <li><a href="../html/faq.html">FAQ</a></li>
+                <li><a href="../rs/review.doc">RESEARCH</a></li>	
+                <li class="active"><a href="../html/extension.html">Extension</a></li>
+                </ul>
+            </div>
+            </div>
+            
+            <!--Curtain Menu Icon-->
+            <p class="menu-icon-style" onclick="openNav()">≡</p>
+        </div>
+        
+        <!--Hide the curtain menu as default when loading the page-->
+        <nav id="curtain-nav">
+            <!--Add a close button (X) hyperlink on the top left corner-->
+            <a href="javascript:void(0)" class="nav-close-button" onclick="closeNav()">❌</a>
+            <div class="curtain-nav-content">
+            <ul>
+                <li ><a href="../index.html">HOME</a></li>
+                <li  ><a href="../html/booking.html">Booking</a></li>
+                <li><a href="../html/faq.html">FAQ</a></li>
+                <li><a href="../rs/research.doc">RESEARCH</a></li>	
+                <li class="active"><a href="../html/extension.html">Extension</a></li>
+            </ul>
+            </div>
+        </nav>
+</header>
+<body>
+    <div class="mt">
+        <p>I confirm that:</p>
+        <br>• This is an original assessment and is entirely my work.
+        <br>  • It contains no material previously published or written by another person or myself except where due acknowledgement is made in the text.
+        <br>• No material which to a substantial extent, has been submitted for any other academic course, is included without acknowledgement.
+    </div>
+    <main>
+        <section class="internal-menu-area">
+            <div class="internal-menu-row">
+                <div class="internal-menu-row-box">
+                    <button class="demo-button"onclick="showDemo(0)">AJ1</button>
+                </div>
+                <div class="internal-menu-row-box">
+                    <button class="demo-button"onclick="showDemo(1)">AJ2</button>
+                </div>
+                <div class="internal-menu-row-box">
+                    <button class="demo-button"onclick="showDemo(2)">AJ3</button>
+                </div>
+                <div class="internal-menu-row-box">
+                    <button class="demo-button"onclick="showDemo(3)">AJ4</button>
+                </div>
+                <div class="internal-menu-row-box">
+                    <button class="demo-button"onclick="showDemo(4)">AJ5</button>
+                </div>
+            </div>
+        </section>
+        <section class="demo-area">
+			<article class="demo-box">
+                <div>
+                    <h3>Search </h3>
+                    <p>Implement “search” feature using JS on FQAs page;The local JSON file is uploaded through the server to form a URL. js fetches the json file through AJAX and converts it into an object. It is processed through jquery to achieve automatic generation and retrieval functions.
+                    </p>
+                    <div class="img">
+                        <img  src="../images/AJ1.1.jpg" alt="Automatic generation " >
+                    </div>
+                    <div class="img">
+                        <img src="../images/AJ2.2.jpg" alt="Automatic retrieval" ">
+                    </div>
+                </div>
+			</article>
+			
+			<article class="demo-box" > 
+                <h3>Local Storage API</h3>
+                <p>Remember user preferences (background color, image, …) by using Cookie, Local Storage API;</p>
+                <div id="AJ2">
+                    <h3>Personal Preference: Set the background color using LocalStorage </h3>
+                    <label>Select color</label>
+                    <input type="color" id="colorPalette" onchange="changeColor()">
+                </div>
+			</article>
+
+			<article class="demo-box"> 
+                <div>
+                    <embed src="../json/nz.svg" type="image/svg+xml" />
+                </div>
+			</article>
+
+			<article class="demo-box"> 
+                <h2>drag-and-drop</h2>
+                <p>Use drag-and-drop API for the “courtesy phone” selection</p>
+                <style>
+                    .mydiv{
+                        border: 1px solid black;
+                        width: 100px;
+                        height: 60px;
+                        background-color: rgb(240, 235, 233);
+                    }
+                    #container{
+                        border: 1px solid black;
+                        width: 100px;
+                        height: 60px;
+                        background-color: rgb(246, 244, 243);
+                    }
+                </style>
+                <div>
+                    <h2>Item Type:</h2>
+                    <div id="container"></div>
+                    <br><div id="HP"class="mydiv" draggable="true">HP Pavilion </div>
+                    <br><div id="Ol"class="mydiv" draggable="true"> Other laptops</div>
+                    <br><div id="Cg"class="mydiv" draggable="true">Chargers </div>
+                    <br><textarea id="rs" rows="10" cols="30"></textarea>
+                    <script>
+                        var mydivs = document.querySelectorAll('.mydiv');
+                        var container = document.getElementById('container');
+                        for(var i=0, len=mydivs.length;i<len;i++){
+                            mydivs[i].ondragstart=function(e){
+                                //storage id
+                                e.dataTransfer.setData('id',this.id)
+                            }
+                        }
+                        container.ondragover=function(){
+                            return false;
+                        }
+                        container.ondrop=function(e){
+                        //get id
+                            var id= e.dataTransfer.getData('id');
+                            var node = document.getElementById(id);
+                            document.getElementById('rs').innerHTML = id
+                            this.appendChild(node)
+                        }
+                    </script>
+                </div>
+			</article>
+
+            <article class="demo-box"> Robot
+                <div id="container" class="container">
+                        <img src="https://cdn.pixabay.com/photo/2020/01/02/16/38/chatbot-4736275_960_720.png" height="200vh" alt="Chatbot clipart">
+                        <div id="chat" class="chat">
+                            <div id="messages" class="messages"></div>
+                            <input id="input" type="text" placeholder="Write something..." autocomplete="off" autofocus="true" />
+                        </div>
+                </div>
+                <style>
+                    html {
+                        height: 50%;
+
+                    }
+                    body {
+                    font-family: 'Roboto', 'Oxygen',
+                        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, Helvetica,
+                        sans-serif;
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                        background-color: silver;
+                        height: 50%;
+                        margin: 0;
+                    }
+
+                    span {
+                        padding-right: 15px;
+                        padding-left: 15px;
+                    }
+
+                    .container {
+                        display: flex;
+                    justify-content: center;
+                        align-items: center;
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    .chat {
+                        height: 300px;
+                        width: 50vw;
+                        display: flex;
+                        flex-direction: column;
+                    justify-content: center;
+                        align-items: center;
+                    } 
+
+                    ::-webkit-input-placeholder { 
+                        color: .711 
+                    }
+                    
+                    input { 
+                        border: 0; 
+                        padding: 15px; 
+                        margin-left: auto;
+                        border-radius: 10px; 
+                    }
+
+                    .messages {
+                        display: flex;
+                        flex-direction: column;
+                        overflow: scroll;
+                        height: 90%;
+                        width: 100%;
+                        background-color: white;
+                        padding: 15px;
+                        margin: 15px;
+                        border-radius: 10px;
+                    }
+
+                    #bot {
+                        margin-right: auto;
+                    }
+
+                    #user {
+                        margin-left: auto;
+                    }
+
+
+                    .bot {
+                        font-family: Consolas, 'Courier New', Menlo, source-code-pro, Monaco,  
+                        monospace;
+                    }
+
+                    .avatar {
+                        height: 25px;
+                    }
+
+                    .response {
+                        display: flex;
+                        align-items: center;
+                        margin: 1%;
+                    }
+
+
+                    @media only screen and (max-width: 980px) {
+                    .container {
+                            flex-direction: column; 
+                            justify-content: flex-start;
+                        }
+                        .chat {
+                            width: 75vw;
+                            margin: 10vw;
+                        }
+                    }
+                </style>
+                <script>
+                    const inputField = document.getElementById("input");
+                    inputField.addEventListener("keydown", (e) => {
+                        if (e.code === "Enter") {
+                            let input = inputField.value;
+                            inputField.value = "";
+                            output(input);
+                        }
+                    });
+
+                    function output(input) {
+                        let product;
+                        let text = input.toLowerCase().replace(/[^\w\s\d]/gi, "");
+                        text = text
+                            .replace(/ a /g, " ")
+                            .replace(/whats/g, "what is")
+                            .replace(/please /g, "")
+                            .replace(/ please/g, "")
+                            .replace(/r u/g, "are you");
+
+                        if (compare(utterances, answers, text)) {
+                            // Search for exact match in triggers
+                            product = compare(utterances, answers, text);
+                        } 
+                        else {
+                            product = alternatives[Math.floor(Math.random() * alternatives.length)];
+                        }
+
+                        addChatEntry(input, product);
+                    }
+
+                    function compare(utterancesArray, answersArray, string) {
+                        let reply;
+                        let replyFound = false;
+                        for (let x = 0; x < utterancesArray.length; x++) {
+                            for (let y = 0; y < utterancesArray[x].length; y++) {
+                            if (utterancesArray[x][y] === string) {
+                                let replies = answersArray[x];
+                                reply = replies[Math.floor(Math.random() * replies.length)];
+                                replyFound = true;
+                                break;
+                            }
+                            }
+                            if (replyFound) {
+                            break;
+                            }
+                        }
+                        return reply;
+                    }
+
+                    function addChatEntry(input, product) {
+                        const messagesContainer = document.getElementById("messages");
+                        let userDiv = document.createElement("div");
+                        userDiv.id = "user";
+                        userDiv.className = "user response";
+                        userDiv.innerHTML = `<span>${input}</span>`;
+                        messagesContainer.appendChild(userDiv);
+
+                        let botDiv = document.createElement("div");
+                        let botText = document.createElement("span");
+                        botDiv.id = "bot";
+                        botDiv.className = "bot response";
+                        botText.innerText = "Typing...";
+                        botDiv.appendChild(botText);
+                        messagesContainer.appendChild(botDiv);
+
+                        messagesContainer.scrollTop =
+                            messagesContainer.scrollHeight - messagesContainer.clientHeight;
+
+                        setTimeout(() => {
+                            botText.innerText = `${product}`;
+                        }, 2000);
+                    }
+
+                </script>
+			</article>
+		</section>
+    </main>
+</body>
+<footer>
+		<div> @Created by: Tingting Cheng <br />
+			Contact me at: <a href="2457869618@qq.com">2457869618@qq.com</a>
+		</div>
+</footer>
+<script type="text/javascript" src="../js/ex.js"></script>

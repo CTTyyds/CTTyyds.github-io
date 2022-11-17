@@ -1,0 +1,377 @@
+body{
+    margin: 0;
+}
+
+/*Top navigation bar style*/
+#head{
+    height:80px;
+    background-color: #0e65b8;
+    margin: 0px;
+    border: 0px;
+    top: 0;
+    z-index: 1000;
+    width:100%;
+    right: 0;
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+}
+#htit{
+    margin-left: 4%;
+    max-width: 300px;
+    height: 80px;
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#hli{
+    margin-left: auto;
+    margin-right: 40px;
+    height: 80px;
+    width: 520px;
+    background-color: #71aee8;
+}
+ul{
+    margin: 0px;
+    padding: 0px;
+    width: 520px;
+    font-size: 18px;
+}
+ul li{
+    height: 80px;
+    width: 130px;
+    list-style: none;
+    float: left;
+    display: inline;
+}
+ul li #ul1{
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ul li ul li{
+    opacity: 0;
+    background-color: #176ab7;
+    height: 0px;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    z-index: 9999;
+    position: relative;
+    align-items: center;
+    -webkit-transition: .25s ease;
+    -moz-transition: .25s ease;
+    -o-transition: .25s ease;
+    transition: .25s ease;
+}
+ul li ul{
+    opacity: 0;
+    margin-left: 0;
+    height: 0px;
+    width: 0px;
+    visibility: hidden;
+    position: relative;
+    -webkit-transition: .25s ease;
+    -moz-transition: .25s ease;
+    -o-transition: .25s ease;
+    transition: .25s ease;
+    z-index: 9999;
+}
+ul li:hover ul{
+    opacity: 1;
+    z-index: 9999;
+    height: 160px;
+    width: 270px;
+    visibility: visible;
+}
+ul li:hover ul li{
+    opacity: 1;
+    visibility: visible;
+    height: 80px;
+    z-index: 9999;
+    width: 270px;
+}
+ul li:hover{
+    background-color: #15a2a2;
+}
+ul li ul li:hover{
+    background-color: #33dfdf;
+}
+@media screen and (max-width:891px){
+    #head{
+        height: 160px;
+    }
+    #htit{
+        max-width: 300px;
+    }
+    #hli{
+        height: 80px;
+        width: 100%;
+        background-color: #3b97ec;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    ul{
+        width: 100%;
+    }
+    ul li{
+        width: 25%;
+    }
+    #pic{
+        position: relative;
+        max-width: 100%;
+        max-height: 600px;
+        padding: 0px 0px;
+        margin-left: auto;
+        margin-right: auto;
+        overflow: hidden;
+        background-size: cover;
+        margin-bottom: 0px;
+    }
+}
+
+
+@media screen and (max-width:500px) {
+    #head{
+        height: 240px;
+    }
+    #hli{
+        height: 160px;
+        width: 100%;
+        background-color: #2465a1;
+        margin-right: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    ul{
+        width: 100%;
+        height: 160px;
+    }
+    #ulli1{
+        width: 100%;
+        height: 80px;
+    }
+    #ulli2{
+        width: 100%;
+        height: 80px;
+    }
+    ul li{
+        width: 50%;
+    }
+    ul li ul{
+        height: 0px;
+    }
+    ul li:hover ul{
+        opacity: 0;
+        height: 0px;
+        width: 0px;
+
+    }
+    ul li:hover ul li{
+        opacity: 0;
+        height: 0px;
+        width: 0px;
+    }
+}
+/*end*/
+/*table css*/
+#input-inf-table{
+    width: 100%;
+    height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.table-part{
+    flex: 1;
+    height: 650px;
+    background-color: #59a5ec;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+}
+
+/*button css*/
+#button-area{
+    background-color: #c96240;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.btn{
+    height: 30px;
+    width: 100px;
+}
+#btn_submit{
+    margin-right: 10px;
+    font-size: 20px;
+}
+#btn_reset{
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.tit{
+    width: 40%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+.inp{
+    width: 40%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.inp-box{
+    width: 90%;
+    height: 30px;
+    font-size: 20px;
+    border-width: 1px;
+    padding: 0;
+}
+#RD{
+    width: 98%;
+}
+#Courtesy{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+}
+#cost{
+    width: 100%;
+    height: 50%;
+    background-color: #936f63;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+}
+#add_button{
+    width: 80%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#btn_add{
+    font-size: 20px;
+    height: 30px;
+}
+#Courtesy-Table-Space{
+    width: 80%;
+    height: 150px;
+    overflow-y: scroll;
+}
+thead td{
+    border:1px solid rgb(113, 134, 55);
+    background-color: lightgray;
+}
+table{
+    border-collapse:collapse;
+}
+table tr td{
+    height: 50px;
+    border:1px solid rgb(149, 85, 118);
+}
+#tit{
+    color: rgb(156, 237, 27)
+}
+#make{
+    color: rgb(156, 237, 27)
+}
+#FC{
+    color: rgb(156, 237, 27)
+}
+/*Styles for footer*/
+footer {
+	background-color: red;
+	min-height: 3em;
+	color: white;
+	font-weight: bold;
+	
+	/*Centralize text vertically and horizontally*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+select option{
+    color: black;
+}
+@media screen and (max-width: 1290px){
+    .table-part{
+        flex: none;
+        width: 100%;
+        height: 1000px;
+    }
+    #input-inf-table{
+        display: flex;
+        height: 3000px;
+    }
+    #button-area{
+        background-color: #ea967a;
+        width: 100%;
+        height: 200px;
+    }
+    .btn{
+        width: 80%;
+        height: 40px;
+    }
+    #btn_submit{
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: -30px;
+    }
+    #btn_reset{
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: -30px;
+    }
+    #add_button{
+        width: 100%;
+    }
+    #Courtesy{
+        height: 40%;
+    }
+    #cost{
+        height: 60%;
+    }
+    .tit{
+        width: 80%;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+    }
+    .inp{
+        width: 80%;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .inp-box{
+        width: 100%;
+    }
+    #RD{
+        width: 100%;
+    }
+}

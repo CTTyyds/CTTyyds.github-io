@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/vue.global.js"></script>
+    <script src="../js/script.js"></script>
+    <link rel="stylesheet" href="../style/booking_style.css">
+    <link rel="stylesheet" href="../style/sweetalert2.min.css">
+    <script src="../js/sweetalert2.min.js"></script>
+    <title>Booking</title>
+</head>
+<body>
+    <header id="head"><!--Top navigation bar-->
+        <p id="htit">LAPTOP FIX BOOKING SYSTEM</p>
+        <div id="hli">
+            <ul>
+                <div id="ulli1">
+                    <li onclick="window.location.href='../index.html'">
+                        <div id="ul1">HOME</div>
+                    </li>
+                    <li onclick="extra_selectdes()">
+                        <div id="ul1" style="background-color: #5fd4d4;">BOOKING</div>
+                        <ul>
+                            <li style="background-color: #2decec;" onclick="currentpage()">LAPTOP BOOKING REPAIR</li>
+                            <li onclick="window.location.href = '../html/jobsheet.html'">JOB SHEET</li>
+                        </ul>
+                    </li>
+                </div>
+    
+                <div id="ulli2">
+                    <li onclick="window.location.href='../html/Faq.html'">
+                        <div id="ul1">FAQ</div>
+                    </li>
+                    <li onclick="window.location.href='../rs/review.doc'">
+                        <div id="ul1">RESEARCH</div>
+                    </li>
+                    <li onclick="window.location.href='../html/extension.html'">
+                        <div id="ul1">EXTENSION</div>
+                    </li>
+                </div>
+            </ul>
+        </div>
+    </header>
+    <div id="input-inf-table">
+        <form id="form1"></form>
+        <div class="table-part" id="consumer-detail" style="background-color: #fee4c3"><!--consumer-detail区-->
+            <h2 style="width: 80%;height: 40px">Customer Details</h2>
+            <fieldset style="width: 73%;height: 60px;display: flex">
+                <legend>
+                    Customer Type<span style="color: red"> *</span>
+                </legend>
+                <div style="height: 100%;width: 90px">
+                    <label for="select-c">Consumer</label>
+                    <label for="select-b">Business</label>
+                </div>
+                <div style="height: 100%;width: 80%">
+                    <input type="radio" name="Customer-Type" id="select-c" value="Consumer" form="form1"
+                           required="required" onchange="ctchange()" checked><br>
+                    <input type="radio" name="Customer-Type" id="select-b" value="Business" form="form1"
+                           required="required" onchange="ctchange()">
+                </div>
+            </fieldset>
+            <div class="tit">Title:<span>*</span></div>
+            <div class="inp">
+                <select class="inp-box" name="tit" id="tit" onchange="selectcolorchange()" form="form1">
+                    <option selected>Please Select</option>
+                    <option>Mr</option>
+                    <option>Mrs</option>
+                    <option>Ms</option>
+                    <option>Miss</option>
+                    <option>Dr</option>
+                </select>
+            </div>
+            <div class="tit">First Name:<span> *</span></div>
+            <div class="inp"><input type="text" name="FN" class="inp-box" value="" onchange="vaildinput()" required="required"
+                                    form="form1" id="FN"></div>
+            <div class="tit">Last Name:<span> *</span></div>
+            <div class="inp"><input type="text" name="LN" class="inp-box" onchange="vaildinput()" required="required"
+                                    form="form1" id="LN"></div>
+            <div class="tit">Street:<span> *</span></div>
+            <div class="inp"><input type="text" name="St" class="inp-box" form="form1" required="required" id="St"></div>
+            <div class="tit">Suburb:</div>
+            <div class="inp"><input type="text" name="Su" class="inp-box" form="form1" id="Su"></div>
+            <div class="tit">City:<span> *</span></div>
+            <div class="inp"><input type="text" name="Ci" class="inp-box" form="form1" required="required" id="Ci"></div>
+            <div class="tit">Post Code:</div>
+            <div class="inp"><input type="text" name="PoCo" class="inp-box" onchange="vaildinput()" form="form1" id="PoCo">
+            </div>
+            <div class="tit">Phone Number:<span> *</span></div>
+            <div class="inp"><input type="text" name="PN" class="inp-box" onchange="vaildinput()" form="form1"
+                                    required="required" id="PN"></div>
+            <div class="tit">Email:<span> *</span></div>
+            <div class="inp"><input type="text" name="Em" class="inp-box" onchange="vaildinput()" form="form1"
+                                    required="required" id="Em"></div>
+        </div>
+        <div class="table-part" style="background-color: #f1ffff"><!--Repair Detail区-->
+            <h2 style="width: 80%;height: 40px">Repair Details</h2>
+            <div class="tit">Purchase Date:<span> *</span></div>
+            <div class="inp"><input type="date" name="PD" max="" class="inp-box" id="PD" form="form1" required="required"
+                                    onchange="PDchange()"></div>
+            <div class="tit">Repair Date:<span> *</span></div>
+            <div class="inp"><input type="datetime-local" class="inp-box" disabled="false" name="RD" id="RD" form="form1"
+                                    required="required" onchange="RDchange()"></div>
+            <fieldset style="width: 73%;height: 50px;display: flex">
+                <legend>
+                    Under Warrantly
+                </legend>
+                <div style="height: 100%;width: 82px">
+                    Warrantly:
+                </div>
+                <div style="height: 100%;width: 80%">
+                    <input type="checkbox" name="Warrantly" disabled="disabled" form="form1"
+                           onchange="Warrantlychange()" id="Warrantly">
+                </div>
+            </fieldset>
+            <div class="tit">Serial Number:<span> *</span></div>
+            <div class="inp"><input type="text" name="SN" class="inp-box" form="form1" required="required"
+                                    onchange="vaildinput()" id="SN"></div>
+            <div class="tit">Make:<span> *</span></div>
+            <div class="inp">
+                <select name="make" class="inp-box" id="make" form="form1" onchange="selectcolorchange()">
+                    <option>Please select</option>
+                    <option value="Mac"> Mac </option>
+                    <option value="Windows"> Windows </option>
+                    <option value="Linux"> Linux </option>
+                    <option value="Other"> Other </option>
+                </select>
+            </div>
+            <div class="tit">Model Number:</div>
+            <div class="inp"><input type="text" name="MN" class="inp-box" form="form1" id="MN"></div>
+            <div class="tit">Fault Category:<span> *</span></div>
+            <div class="inp">
+                <select name="FC" class="inp-box" id="FC" form="form1" onchange="selectcolorchange()">
+                    <option>Please Select</option>
+                    <option value="Screen"> Screen </option>
+                    <option value="Cpu "> Cpu </option>
+                    <option value="Keyboard"> Keyboard </option>
+                    <option value="Other"> Other </option>
+                </select>
+            </div>
+            <div class="tit">Description:<span> *</span></div>
+            <div class="inp" style="height: 150px"><textarea name="Desc" id="Desc" class="inp-box" style="height: 130px"
+                                                             form="form1" cols="30" rows="10"></textarea></div>
+        </div>
+        <div class="table-part"><!--courtesy区-->
+            <div id="Courtesy">
+                <h2 id="Courtesy-Type" style="width: 80%;height: 40px">{{ msg }}</h2>
+                <div class="tit">ItemType:</div>
+                <div class="inp">
+                    <select class="inp-box" name="device-list" id="device-list">
+                        <option selected="selected">Please Select</option>
+                        <option v-for="(item) in items">{{ item.message }}</option>
+                    </select>
+                </div>
+                <div id="add_button">
+                    <button class="btn" type="button" id="btn_add" form="form1" onclick="addtotable()">Add</button>
+                </div>
+                <div id="Courtesy-Table-Space">
+                    <table id="Courtesy-Table" style="width: 100%">
+                        <thead>
+                        <td style="width: 55%;height: 30px;text-align: center">Item</td>
+                        <td style="width: 45%;height: 30px;text-align: center">Cost</td>
+                        </thead>
+                        <tr v-for="(item) in items">
+                            <td style="background-color: white">&nbsp;&nbsp;&nbsp;{{ item.device }}</td>
+                            <td style="background-color: white">&nbsp;&nbsp;&nbsp;${{ item.cost }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <!-- cost table-->
+            <div id="cost">
+                <h2 style="width: 80%;height: 40px">Cost</h2>
+                <div class="tit">Bond:</div>
+                <div class="inp"><input type="text" disabled="disabled" form="form1" class="inp-box" name="Bond" id="Bond">
+                </div>
+                <div class="tit">Service Fee:</div>
+                <div class="inp"><input type="text" disabled="disabled" form="form1" name="SF" class="inp-box" id="SF">
+                </div>
+                <div class="tit">Total:</div>
+                <div class="inp"><input type="text" disabled="disabled" form="form1" name="Total" class="inp-box"
+                                        id="Total">
+                </div>
+                <div class="tit">GST:</div>
+                <div class="inp"><input type="text" disabled="disabled" form="form1" name="GST" class="inp-box" id="GST">
+                </div>
+                <div class="tit">Total(+GST):</div>
+                <div class="inp"><input type="text" disabled="disabled" form="form1" name="Total_with_GST" class="inp-box"
+                                        id="Total_with_GST"></div>
+            </div>
+        </div>
+    </div>
+    <div id="button-area"><!--button area-->
+        <button class="btn" id="btn_submit" type="button" style="height:4em ;width: 10em;" onclick="submitall()">Submit</button>
+        <input type="reset" id="reset"  value="Reset" style="height:4em;width: 10em; "></input>
+    </div>
+</body>
+<footer>
+    <p>Advanced Web Design, Copyright &copy; 2020</p>
+</footer>
+<script src="../js/booking_page_script.js"></script>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/script.js"></script>
+    <script src="../js/vue.global.js"></script>
+    <link rel="stylesheet" href="../style/jobsheet_style.css">
+    <title>Repair Booking</title>
+</head>
+<body>
+<header id="head">
+    <p id="htit">Repair Booking</p>
+    <div id="AD">
+        Amount Due<br>
+        <div style="margin-top: -55px;font-weight: bolder;font-size: 18px">${{ costs }}</div>
+    </div>
+</header>
+<div id="main_part">
+    <div id="per_inf">
+        <div id="customer">
+            <h3 style="width: 100%">Customer</h3>
+            <div style="font-size: 14px;width: 100%;margin-top: 5px;height: auto">
+                {{ tit }} {{ FN }} {{ LN }}<br>
+                {{ Street }}<br>
+                {{ Suburb }},{{ city }} {{ PoCo }}<br>
+                {{ PN }}<br>
+                {{ Email }}
+            </div>
+        </div>
+        <div id="RJ">
+            <h3 style="width: 100%;">Repair Job</h3>
+            <div style="width: 260px;height: auto;display: flex;flex-wrap: wrap;align-content: flex-start;margin-right: 0px;margin-left: auto;margin-top: 5px;font-size: 14px">
+                <h4 style="width: 40%;margin: 0">Job Number:</h4>
+                <div style="width: 60%;margin: 0">{{ JN }}</div>
+                <h4 style="width: 40%;margin: 0">Invoice Date:</h4>
+                <div style="width: 60%;margin: 0">{{ InDa }}</div>
+                <h4 style="width: 40%;margin: 0">Payment Due:</h4>
+                <div style="width: 60%;margin: 0">{{ PaDu }}</div>
+            </div>
+        </div>
+    </div>
+    <div id="Re_inf">
+        <div id="ReDe">
+            <h3 style="width: 100%;margin-bottom: 10px">Repair Details</h3>
+            <div style="height: 180px;width: 340px;flex-wrap:wrap;display: flex;margin-left: 40px">
+                <h4 style="margin: 0;width: 50%">Puchace Date:</h4>
+                <div style="width: 50%">{{ PD }}</div>
+                <h4 style="margin: 0;width: 50%">Repair Date/Time:</h4>
+                <div style="width: 50%">{{ RD }}</div>
+                <h4 style="margin: 0;width: 50%">Under Warrantly:</h4>
+                <div style="width: 50%">{{ UW }}</div>
+                <h4 style="margin: 0;width: 50%">Serial Number:</h4>
+                <div style="width: 50%">{{ SN }}</div>
+                <h4 style="margin: 0;width: 50%">Device Make:</h4>
+                <div style="width: 50%">{{ DM }}</div>
+                <h4 style="margin: 0;width: 50%">Model Number:</h4>
+                <div style="width: 50%">{{ MN }}</div>
+                <h4 style="margin: 0;width: 50%">Fault Category:</h4>
+                <div style="width: 50%">{{ FC }}</div>
+                <h4 style="margin: 0;width: 50%">Description:</h4>
+                <div style="width: 50%">{{ Desc }}</div>
+            </div>
+        </div>
+        <div id="CoLo">
+            <h3 style="width: 100%;margin-bottom: 10px">Courtesy Loan Device Details</h3>
+            <div id="c_table_part">
+                <table id="c_table" style="width: 100%;">
+                    <thead style="width: 100%">
+                        <td style="width: 40%;height:30px;text-align: center">Item</td>
+                        <td style="width: 60%;height:30px;text-align: center">Cost</td>
+                    </thead>
+                    <tr v-for="(item) in items">
+                        <td>{{ item.device }}</td>
+                        <td>${{ item.cost }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="totals" style="display: flex;flex-wrap: wrap;align-content: flex-start"><!--totals区-->
+            <h3 style="width: 100%;margin-bottom: 10px">Totals</h3>
+            <div style="display: flex;width:80%;flex-wrap: wrap;margin-right: 0px;margin-left: auto">
+                <h4 style="width: 50%;margin: 0">Bond:</h4>
+                <div style="width: 50%">${{ Bond }}</div>
+                <h4 style="width: 50%;margin: 0">Service Fee:</h4>
+                <div style="width: 50%">${{ SF }}</div>
+                <h4 style="width: 50%;margin: 0">Total:</h4>
+                <div style="width: 50%">${{ Tot }}</div>
+                <h4 style="width: 50%;margin: 0">GST:</h4>
+                <div style="width: 50%">${{ GST }}</div>
+                <h4 style="width: 50%;margin: 0">Total(+GST):</h4>
+                <div style="width: 50%">${{ Tot_w_Gst }}</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="bot">
+    <div style="display: flex;flex-wrap: wrap;height: 100%;width: 300px">
+        <h3 style="width: 100%;margin-bottom: 10px">Laptop Fix Services</h3>
+        <p>
+            42 Fuxed It Drive<br>
+            Alexander<br>
+            Napier,Hawke's Bay 4112<br>
+            New Zeland
+        </p>
+    </div>
+    <div style="height: 100%;width: auto;display: flex;justify-content: center;align-items: center;margin-left: auto;margin-right: auto"><button style="height: 30px" onclick="window.location.href='../index.html'">Home</button></div>
+    <div style="display: flex;flex-wrap: wrap;height: 100%;width: 300px;margin-left: auto;margin-right: 0px;align-content: flex-start;justify-content: right">
+        <h3 style="width: 100%;margin-bottom: 10px">Contact Us</h3>
+        <div style="display: flex;flex-wrap: wrap;width: 80%;margin-left: auto;margin-right: 0px;margin-top: 30px">
+            <h4 style="width: 30%;margin: 0">Phone:</h4>
+            <div style="width: 70%">06876543</div>
+            <h4 style="width: 30%;margin: 0">Email:</h4>
+            <div style="width: 70%">contact@phonefix.it</div>
+        </div>
+    </div>
+</div>
+<div></div>
+</body>
+<script src="../js/jobsheet_script.js"></script>
+</html>

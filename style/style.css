@@ -1,0 +1,489 @@
+/*-------------------------------------------------*/
+/* MOBILE FIRST APPROACH
+   All the below CSS styles are valid for Mobile (small) devices
+   Link: https://www.w3schools.com/css/css_rwd_mediaqueries.asp
+  
+   CSS Relative Unit
+   Link: https://www.w3schools.com/cssref/css_units.asp
+         https://css-tricks.com/css-font-size/
+         https://developer.mozilla.org/en-US/docs/Web/CSS/font-size
+*/
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	background: #f4f4f4;	
+	font-family: "Times New Roman", Times, serif;
+	font-size: 16px;/*Set the baseline font size for the whole website*/
+}
+
+/*-------------------------------------------------*/
+/*Footer Area*/
+footer {
+	height: 10vh;
+	background-color: #DAF7A6;
+	text-align: center;
+	
+	/*Centering both vertical and horizontal*/
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/*-------------------------------------------------*/
+/*Curtain Navigation bar*/
+nav {
+	padding: 10px 10px 10px 10px;/*10px 10px 10px 10px*/
+	overflow: visible;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: visible;
+}
+
+nav ul li {
+	display: block;
+	font-family: 'Oswald', sans-serif;
+	font-size: 1.2em;
+	text-transform: uppercase;
+}
+
+nav ul li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;	
+}
+
+.active {
+	background-color: #FF9633;
+}
+
+nav ul li:hover:not(.active) {
+	background-color: green;
+}
+
+
+nav ul li ul li {
+	background: #555; 
+	display: block; 
+	font-size: 1em;
+}
+
+nav ul li ul li a {
+	display: block; 
+	text-align: left;
+
+}
+
+nav ul li.dropdown:hover ul {
+	display: block;
+}
+
+/*Use Flexbox to create responsive layout*/
+.CurtainMenu {
+	background-color: #DAF7A6;
+	min-height: 5vh;
+	
+	/*flexbox container*/
+	display: flex;
+	flex-direction: row;/*display on a row => horizontally*/
+}
+
+.logo-tagline {
+	/*Use Flexbox to create responsive layout*/
+	flex: 1;
+	
+	/*flexbox container*/
+	display: flex;
+	flex-direction: row;/*display on a row => horizontally*/
+}
+
+.logo, .tagline {
+	font-size: 1.5em;
+}
+
+.tagline{
+	/*Centering both vertical and horizontal*/
+	display: flex;
+	justify-content: left;
+	align-items: center;
+}
+
+.desktop-menu {
+	/*Use Flexbox to create responsive layout*/
+	flex: 3;
+	display: none;	
+}
+
+
+.menu-icon-style {
+	/*Use Flexbox to create responsive layout*/
+	flex: 1;
+		
+	font-size: 4.0em;
+	color: blue;
+	cursor: pointer;
+	text-align: right;
+	margin-right: 20px;
+}
+
+#curtain-nav {
+	height: 70%;/*100%*/
+	width: 0;/*Hide it as default when loading page*/
+	padding: 0;
+	position: fixed;
+	z-index: 3;
+	top: 0; 
+	right: 0;
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0, 0.9);
+	overflow-x: hidden;
+	transition: 0.5s;	
+}
+
+.curtain-nav-content {
+	/*For curtain menu*/
+	position: relative;
+	top: 15%;
+	width: 100%;
+	text-align: center;
+	margin-top: 30px;	
+	overflow: visible;
+}
+
+.nav-close-button {
+	position: absolute;
+	top: 20px;
+	right: 45px;
+	font-size: 2.0em;
+	color: white;
+	text-decoration: none;
+}
+
+
+/*---------------------------------*/
+/*CSS flexbox: card layout*/
+/* Ref: 
+  Link 1: https://codelikethis.com/lessons/responsive-layout/flexbox-layout 
+  Link 2: https://medium.com/@merveyuksek/webpage-layout-examples-with-flexbox-88287f010a08
+*/
+
+main {
+	min-height: 85vh;
+	background-color: gray;
+	
+	/*flexbox container*/
+	display: flex;
+	flex-direction: column;/*display on a column => vertically*/
+}
+
+/*-----------*/
+.showcase {
+	height: 30vh;
+	background-color: #001a33;
+	position: relative;
+}
+
+.showcase-bg-image {
+	/* The image used */
+	background-image: url("https://www.itprotoday.com/sites/itprotoday.com/files/styles/article_featured_standard/public/JavaScript-code.jpg?itok=yB8Igyye");
+
+	/* Add the blur effect */
+	filter: blur(2px);
+	-webkit-filter: blur(2px);
+
+	/* Full height */
+	height: 100%; 
+
+	/* Center and scale the image nicely */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+/* Position text in the middle of the page/image */
+.showcase-bg-text {
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+	color: white;
+	font-weight: bold;
+	border: 3px solid #f1f1f1;
+	
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 2;/**/
+	width: 80%;
+	padding: 20px;
+	text-align: center;
+}
+
+.showcase-bg-text h1 {
+	font-size: 2em;
+}
+
+.showcase-bg-text h4, .showcase-bg-text h1, .showcase-bg-text p {
+	margin-top: 0.5em;
+}
+
+/*-----------*/
+.bio-webtechno {
+	min-height: 25vh;
+	background-color: #003366;
+	
+	/*flexbox container*/
+	display: flex;
+	flex-direction: column;/*display on a column => vertically*/	
+}
+
+.bio{
+	flex: 1;
+	background-color:#F1C40F;
+	padding: 1.5em;
+}
+
+.portrai-paragraph {
+	/*flexbox container*/
+	display: flex;
+	flex-direction: column;/*display on a column => vertically*/
+	padding: 1.5em;	
+}
+
+.bio-portrait img {
+	width: 70px;
+	height: 70px;
+	
+	display: block;	
+	margin-left: auto;
+	margin-right: auto;
+	
+	border-radius: 50%;	
+	border: 1px solid black;
+}
+
+.bio-paragraph {
+	margin-left: 1em;
+	line-height: 1.4em;
+}
+
+.webtechno {
+	flex: 1;
+	background-color: #EC7063;
+	padding: 1.5em;
+}
+
+.webtechno ol {
+	padding-left: 2em;
+	line-height: 1.5em;
+}
+
+/*-----------*/
+.competences {
+	min-height: 20vh;
+	background-color: #DAF7A6;
+	padding: 1.5em;
+}
+
+/*-----------*/
+.statement-of-authenticity {
+	min-height: 20vh;
+	background-color:#FF7F50;
+	padding: 1.5em;
+	line-height: 1.5em;
+}
+
+.statement-of-authenticity p {
+	font-style: italic;
+}
+
+/*-------------------------------------------------*/
+/*Container for flexboxes*/
+.topics_container {
+	display: flex;
+	flex-direction: column;/*display on a column => vertically*/
+}
+
+/*Create three equal columns that sits next to each other*/
+.topics_box  {
+	flex: 1;
+	display: block;
+	padding: 10px;	
+	margin: 5px;
+	min-height: 200px;
+}
+
+.topics_box img {
+	height: 128px;
+	width: auto;
+	
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+	border-radius: 50%;
+	border: 2px solid black;
+}
+
+
+/*flip boxes styles*/
+.flip-box-area {
+	padding: 5px;
+	margin-top: 10px;
+}
+
+.flip-box-header {
+	padding: 30px;
+	text-align: center;
+	font-size: 30px;
+}
+
+.flip-box-header h3 {
+	text-align: center;
+}
+
+
+/*3D Flip Box: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_flip_box*/
+.flip-box {
+	background-color: transparent;
+	width: 300px;
+	height: 200px;
+	perspective: 1000px;
+}
+
+.flip-box-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	transition: transform 0.8s;
+	transform-style: preserve-3d;
+}
+
+.flip-box-front {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+	background-color: green;
+	color: black;
+}
+
+.flip-box-back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+    background-color: yellow;
+    color: blue;
+    transform: rotateY(180deg);	
+}
+
+.flip-box-front h3 {
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+.flip-box-front img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;	
+	border-radius: 50%;
+	width: auto;
+	height: 70%;
+}
+
+.flip-box-back h3, .flip-box-back p {
+	text-align: left;
+	line-height: 20px;
+}
+
+.flip-box:hover .flip-box-inner {
+	transform: rotateY(180deg);
+}
+
+
+
+
+/*-------------------------------------------------*/
+/*RESPONSIVE CSS*/
+/*THUMB RULE: Mobile First
+  Use min-width to detect device screen size.
+  min-wdith: 768px means that "when viewport is 768px or larger (Tablet or PC), set these styles; 
+             otherwise (Mobile) set above styles"  
+  
+  In this lab: For PC and labtop (more than 768px screen):
+    + The nav bar is horizontal instead of vertical-align
+    + The form is reduced to take up 50% of width.
+*/
+@media screen and (min-width: 768px) {/*when the viewport is 768px or larger => Set those styles for Tablet or PC*/  
+   .desktop-menu {
+	   display: block;
+   }
+   
+   /*Horizontal nav*/
+   .horizontal-nav {
+	   	background-color: #DAF7A6; 
+		padding: 10px 10px 10px 10px;
+   }
+   
+   .horizontal-nav ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+	}
+
+	.horizontal-nav ul li {
+		display: inline-block;
+		font-family: 'Oswald', sans-serif;
+		font-size: 1.2em;
+	}
+
+	.horizontal-nav ul li a {
+		display: block;
+		color: black;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;	
+	}
+
+
+	.horizontal-nav ul li:hover:not(.active) {
+		background-color: green;
+	}
+	
+	/*Make bio and webtechno sections horizontal*/
+	.bio-webtechno {
+		min-height: 25vh;
+		background-color: #003366;
+		
+		/*flexbox container*/
+		display: flex;
+		flex-direction: row;/*display on a row => horizontal*/	
+	}
+	
+	.portrai-paragraph {
+		/*flexbox container*/
+		display: flex;
+		flex-direction: row;	
+	}
+	
+	/*Makes the three columns horizontal*/
+	.topics_container {
+		display: flex;
+		flex-direction: row;
+	}
+}
+
+
+
+

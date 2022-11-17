@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<!------------------------------HEAD------------------------------------------------>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+	<link rel="stylesheet" type="text/css" href="style\style.css">
+</head>
+
+<!------------------------------BODY------------------------------------------------>
+<body>
+	<!---------------------------------------------------->	
+	<!--Navigation menu section-->	
+	<div class="CurtainMenu">
+	
+		<!--Icon and Tagline-->
+		<div class="logo-tagline">
+			<div class="logo">
+				<img src="images/OIP-C.jpg" class="img-fluid" style="width:75px;" />
+			</div>
+			<div class="tagline">ITWD6.408
+			</div>
+		</div>
+		
+		<!--Desktop horizontal-menu-->
+		<div class="desktop-menu">
+			<div class="horizontal-nav">
+				<ul>
+					<li class="active" ><a href="../index.html">HOME</a></li>
+					<li  ><a href="html/booking.html">Booking</a></li>
+					<li><a href="html/faq.html">FAQ</a></li>
+					<li><a href="rs/review.doc">RESEARCH</a></li>	
+					<li><a href="html/extension.html">Extension</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		<!--Curtain Menu Icon-->
+		<p class="menu-icon-style" onclick="openNav()">≡</p>
+	</div>
+	
+	<!--Hide the curtain menu as default when loading the page-->
+	<nav id="curtain-nav">
+		<!--Add a close button (X) hyperlink on the top left corner-->
+		<a href="javascript:void(0)" class="nav-close-button" onclick="closeNav()">❌</a>
+		<div class="curtain-nav-content">
+			<ul>
+				<li class="active" ><a href="../index.html">HOME</a></li>
+				<li  ><a href="html/booking.html">Booking</a></li>
+				<li><a href="html/faq.html">FAQ</a></li>
+				<li><a href="rs/review.doc">RESEARCH</a></li>	
+				<li><a href="html/extension.html">Extension</a></li>
+			</ul>
+		</div>
+	</nav>
+	
+	<!---------------------------------------------------->	
+	<!--Main content section-->
+	<main>
+		<section class="showcase">
+			<div class="showcase-bg-image"></div>
+			<div class="showcase-bg-text">
+				<h4>My Home Page</h4>
+				<h1>I am Eos</h1>
+				<p>And I'm a Student</p>
+			</div>		
+		</section>
+		
+		<section class="bio-webtechno">
+			<article class="bio">
+				<h1>BIO</h1>
+				<div class="portrai-paragraph">
+					<div class="bio-portrait">
+						<img src="images/1.jpg"/>
+					</div>
+					<p class="bio-paragraph"> Biography: Everything ought to be beautiful in a human being: face, dress, soul and idea.
+					</p>
+				</div>
+			</article>
+			
+			<article class="webtechno"> 
+				<h1>MY WEB TECHNOLOGIES</h1>
+				<p>Top 5 technologies <br>
+				<ol>
+					<li>Local Storage API</li>
+					<li>Personal Preference</li>
+					<li>drag-and-drop</li>
+					<li>Robot</li>
+					<li>Interactive map</li>
+				</ol>				
+			</article>
+		</section>
+		
+		<section class="competences">
+			<h1>MY WEB DEVELOPMENT COMPETENCES</h1>
+			
+			<div class="flip-box-area">
+			
+				<div class="flip-box-header">
+					<h4>Hover over the box to flip it over</h4>
+				</div>
+				
+				<!--Create a 1x3 card layout using CSS flex box -->
+				<div class="topics_container" >
+					<div class="topics_box">
+					
+						<!--3D Flip Box: >				
+						<!--Add the first Flip box-->
+						<div class="flip-box">
+							<div class="flip-box-inner">
+								<!--Front side of the Flip Box-->
+								<div class="flip-box-front">	
+									<h3>Hypertext Mark-up Language</h3>
+									<img src="images/html5.png" alt="html5 image">										
+								</div>
+								<!--Back side of the Flip Box-->
+								<div class="flip-box-back">		
+									<h3>HTML5</h3>
+									<p>	HTML (Hyper-Text Markup Language) is used to put the <span class="red-color">structure & content </span> of a website together (Like a skeleton of a body).<br>
+										It is the fifth and current major version of the HTML standard, and subsumes XHTML.
+									</p>
+									<p> Read more <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML: HyperText Markup Language</a>
+									</p>
+								</div>
+							</div>
+						</div>	
+					</div>
+					
+					
+					<div class="topics_box">
+					
+						<!--3D Flip Box: >							
+						<!--Add the second Flip box-->
+						<div class="flip-box">
+							<div class="flip-box-inner">
+								<!--Front side of the Flip Box-->
+								<div class="flip-box-front">	
+									<h3>Cascading Style Sheet</h3>
+									<img src="images/css3.png" alt="css3 image">										
+								</div>
+								<!--Back side of the Flip Box-->
+								<div class="flip-box-back">		
+									<h3>CSS3</h3>
+									<p>CSS3 is the latest evolution of the Cascading Style Sheets language <br>
+										CSS acts like <span class="red-color">makeup for the HTML</span>. CSS improves the colors and layout of a website structure built with HTML.
+									</p>
+									<p> Read more <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Tutorials">CSS Tutorials</a>
+									</p>	
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="topics_box">						
+						<!--3D Flip Box:>							
+						<!--Add the third Flip box-->
+						<div class="flip-box">
+							<div class="flip-box-inner">
+								<!--Front side of the Flip Box-->
+								<div class="flip-box-front">	
+									<h3>Cascading Style Sheet</h3>
+									<img src="images/javascript.png" alt="css3 image">										
+								</div>
+								<!--Back side of the Flip Box-->
+								<div class="flip-box-back">		
+									<h3>JavaScript</h3>
+									<p>JavaScript is a high-level, interpreted scripting programming language. <br>
+										JavaScript is a full-on programming language that adds <span class="red-color">interactivity and functionality to a website</span>.
+									</p>
+									<p class="skill-text"> Read more <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript ">JavaScript</a>
+									</p>
+								</div>
+							</div>
+						</div>										
+
+					</div>					
+				</div>				
+			</div>						
+		</section>
+		
+		
+		<section class="statement-of-authenticity"> 
+			<h1>STATEMENT OF AUTHENTICITY</h1>
+			<p>
+				“I confirm that:<br>
+				This is an original assessment and is entirely my own work.<br>
+				It contains no material previously published or written by another person or myself except where due acknowledgement is made in the text.</br>
+				No material which to a substantial extent, has been submitted for any other academic course, is included without acknowledgement.”<br>
+			</p>
+		</section>				
+	</main>
+	
+	<!---------------------------------------------------->	
+	<!--Footer section-->
+	<footer>
+		<div> @Created by: Eos Cheng <br />
+			Contact me at: <a href="mailto:ddang@eit.ac.nz">2457869618@qq.com</a>
+		</div>
+	</footer>
+	
+	<!--Embed the js file at the bottom of the html file-->
+	<script type="text/javascript" src="js/hp.js">
+	</script>
+
+</body>
+</html>
+
